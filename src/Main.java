@@ -46,8 +46,9 @@ public class Main {
         System.out.println(s);
 
     }
-    public final static String doStringStuff(UpperConcat uc,String s1, String s2){
-        return uc.uppperAndConcat(s1,s2);
+
+    public final static String doStringStuff(UpperConcat uc, String s1, String s2) {
+        return uc.uppperAndConcat(s1, s2);
     }
 }
 
@@ -76,18 +77,24 @@ class Employee {
         this.age = age;
     }
 }
-interface UpperConcat{
+
+interface UpperConcat {
     public String uppperAndConcat(String s1, String s2);
 }
-class AnotherClass{
-    public String doSomething(){
+
+class AnotherClass {
+    public String doSomething() {
+
+        int i = 0;
         UpperConcat uc = (s1,s2)-> {
-            System.out.println("The lambda expression class is :" + getClass().getSimpleName());
-            String result = s1.toUpperCase() + s2.toUpperCase();
+            System.out.println("The lambda expression class is " + getClass().getSimpleName());
+            String result = s1.toUpperCase()+ s2.toUpperCase();
             return result;
         };
+
+
         System.out.println("The Another class's name is " + getClass().getSimpleName());
-        return Main.doStringStuff(uc,"String1","String2");
+        return Main.doStringStuff(uc, "String1", "String2");
 //        System.out.println("The Another class's name is " + getClass().getSimpleName());
 //        return Main.doStringStuff(new UpperConcat() {
 //            @Override
